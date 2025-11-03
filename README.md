@@ -1,2 +1,2 @@
 # wiki-train
-Multi GPU and Multu Node training
+Multi-GPU and Multi-Node training
