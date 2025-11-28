@@ -2,7 +2,7 @@
 
 # Example 1: Training on specific GPUs (GPU 2 and 3)
 # Use CUDA_VISIBLE_DEVICES to select specific GPUs
-CUDA_VISIBLE_DEVICES=2,3 accelerate launch --num_processes 2 main.py \
+CUDA_VISIBLE_DEVICES=1,2 accelerate launch --num_processes 2 main.py \
   --model_name_or_path google/gemma-270m \
   --dataset_name Exploration-Lab/CS779-Fall25 \
   --dataset_config_name Assignment-3-em \
