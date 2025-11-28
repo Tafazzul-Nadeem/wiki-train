@@ -4,8 +4,16 @@ Fine-tuning script for Gemma-270M on custom datasets
 Supports multi-GPU and multi-node training
 """
 
+from dotenv import load_dotenv
+import os
+
+# Load .env file at the start of your script
+load_dotenv()
+
+# Now you can access the token
+hf_token = os.getenv("HF_TOKEN")
+
 # Import standard library modules
-import os  # For file system operations and path handling
 import argparse  # For parsing command line arguments
 import logging  # For logging training progress and debugging
 from typing import Optional  # For type hints with optional values
