@@ -9,8 +9,8 @@ CUDA_VISIBLE_DEVICES=1,2 accelerate launch --num_processes 2 main.py \
   --text_column text \
   --output_dir ./outputs/gemma-270m-wikitext \
   --num_train_epochs 3 \
-  --per_device_train_batch_size 4 \
-  --per_device_eval_batch_size 4 \
+  --per_device_train_batch_size 1 \
+  --per_device_eval_batch_size 1 \
   --gradient_accumulation_steps 8 \
   --learning_rate 2e-5 \
   --weight_decay 0.01 \

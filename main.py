@@ -335,9 +335,9 @@ def main():
         bf16=args.bf16,  # Use bfloat16 mixed precision
         fp16=args.fp16,  # Use float16 mixed precision
         gradient_checkpointing=args.gradient_checkpointing,  # Enable gradient checkpointing
-        report_to=args.report_to,  # Where to report metrics (tensorboard/wandb/none)
+        # report_to=args.report_to,  # Where to report metrics (tensorboard/wandb/none)
         do_eval=eval_dataset is not None,  # Enable evaluation if validation data exists
-        evaluation_strategy="steps" if eval_dataset else "no",  # Evaluate every N steps or never
+        eval_strategy="steps" if eval_dataset else "no",  # Evaluate every N steps or never
         load_best_model_at_end=True if eval_dataset else False,  # Load best checkpoint at end (only if evaluating)
         metric_for_best_model="loss" if eval_dataset else None,  # Use loss to determine best model
         greater_is_better=False if eval_dataset else None,  # Lower loss is better
