@@ -11,7 +11,8 @@ import os
 load_dotenv()
 
 # Now you can access the token
-hf_token = os.getenv("HF_TOKEN")
+os.environ['HF_HOME']= os.getenv("HF_DIRECTORY")
+os.environ['HF_TOKEN']= os.getenv("HF_ACCESS_TOKEN")
 
 # Import standard library modules
 import argparse  # For parsing command line arguments
@@ -275,7 +276,7 @@ def main():
     logger.info(f"Loading tokenizer from {args.model_name_or_path}")  # Log tokenizer loading
     tokenizer = AutoTokenizer.from_pretrained(  # Load tokenizer that matches the model
         args.model_name_or_path,  # Model identifier (same as model)
-        trust_remote_code=True,  # Allow execution of custom code in tokenizer (needed for some models)
+        trust_remote_code=True, # Allow execution of custom code in tokenizer (needed for some models)
     )
 
     # Set padding token if not set (required for batching)
@@ -297,7 +298,7 @@ def main():
 
     model = AutoModelForCausalLM.from_pretrained(  # Load pretrained causal language model
         args.model_name_or_path,  # Model identifier
-        **model_kwargs  # Unpack model configuration kwargs
+        **model_kwargs,  # Unpack model configuration kwargs
     )
 
     if args.gradient_checkpointing:  # Check if gradient checkpointing is enabled
