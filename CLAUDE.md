@@ -223,4 +223,4 @@ Dataset format: `{"text": "your training text here"}`
 - Evaluation only runs if `--validation_file` or validation split exists in dataset
 - The `group_texts()` function drops small remainders that don't fill complete chunks
 - Model embeddings auto-resize if tokenizer vocab exceeds embedding size
-- Use comments after every line of code to describe what that line does.
+- Use comments after every line of code to describe what that line does..
